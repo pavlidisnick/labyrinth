@@ -3,7 +3,6 @@ package Labyrinth.Model.GameDataFunctions;
 import Labyrinth.Model.Game;
 import Labyrinth.Model.Player.Player;
 import Labyrinth.Model.Room.RoomData;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -11,7 +10,7 @@ import java.io.ObjectOutputStream;
 
 public class Save {
 
-    public static void saveGame(){
+    public static void saveGame() {
         try {
 
             FileOutputStream saveFile = new FileOutputStream("SaveObj.sav");
@@ -28,8 +27,7 @@ public class Save {
 
             save.close();
 
-        }
-        catch (IOException exc) {
+        } catch (IOException exc) {
 
             exc.printStackTrace();
 

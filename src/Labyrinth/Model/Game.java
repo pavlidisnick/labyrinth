@@ -34,7 +34,7 @@ public class Game {
     void play() {
         System.out.println("You want to load your last game?");
 
-        label:
+        label1:
         while (true) {
             Scanner scanner = new Scanner(System.in);
             String askLoad = scanner.nextLine();
@@ -44,11 +44,11 @@ public class Game {
                     Load.loadGame();
                     System.out.println(RoomData.currentRoomStructure.Description());
                     Time.start();
-                    break label;
+                    break label1;
                 case "no":
                     System.out.println(ANSI_RED + "New Game\n" + ANSI_RESET);
                     System.out.println("You want to play on Hard Mode?");
-                    label1:
+                    label2:
                     while (true) {
                         Scanner scanner2 = new Scanner(System.in);
                         String askMode = scanner2.nextLine();
@@ -56,10 +56,10 @@ public class Game {
                             case "yes":
                                 hardMode = true;
                                 System.out.println("Hard Mode " + ANSI_RED + "enabled\n" + ANSI_RESET);
-                                break label1;
+                                break label2;
                             case "no":
                                 System.out.println("Hard Mode " + ANSI_RED + "disabled\n" + ANSI_RESET);
-                                break label1;
+                                break label2;
                             default:
                                 System.out.println("Type again");
                                 break;
@@ -67,7 +67,7 @@ public class Game {
                     }
                     printWelcome();
 
-                    break label;
+                    break label1;
                 default:
                     System.out.println("Type again");
                     break;
@@ -96,7 +96,7 @@ public class Game {
         Player.playerName = on.nextLine();
         System.out.println();
         System.out.println("Welcome to Labyrinth " + ANSI_BLUE + Player.playerName + ANSI_RESET + " !");
-        System.out.println("This is a text-based game for the class of " + ANSI_PURPLE + "Dr. Theodoros Lantzos." + ANSI_RESET);
+//        System.out.println("This is a text-based game for the class of " + ANSI_PURPLE + "Dr. Theodoros Lantzos." + ANSI_RESET);
         System.out.println("You are trapped in a labyrinth of rooms searching an item in order to win." +
                 " One item is a bomb.");
         System.out.println(ANSI_PURPLE + "\nGood Luck\n" + ANSI_RESET);

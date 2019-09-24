@@ -11,15 +11,15 @@ import java.util.ArrayList;
 
 public class Load {
 
-    public static void loadGame(){
+    public static void loadGame() {
 
         try {
 
             FileInputStream saveFile = new FileInputStream("SaveObj.sav");
             ObjectInputStream save = new ObjectInputStream(saveFile);
 
-            Player.playerName =(String) save.readObject();
-            Player.playerLocation =(String ) save.readObject();
+            Player.playerName = (String) save.readObject();
+            Player.playerLocation = (String) save.readObject();
             Player.inventory = (String[]) save.readObject();
             Player.playerMoves = (Integer) save.readObject();
             Time.secondsPassed = (Integer) save.readObject();
@@ -29,8 +29,7 @@ public class Load {
 
             save.close();
 
-        }
-        catch (Exception exc) {
+        } catch (Exception exc) {
 
             exc.printStackTrace();
 
